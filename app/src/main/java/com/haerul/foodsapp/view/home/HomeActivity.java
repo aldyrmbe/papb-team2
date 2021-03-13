@@ -12,6 +12,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import android.widget.Toast;
+
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -75,9 +78,10 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
         viewPagerMeal.setPadding(20, 0, 150, 0);
         headerAdapter.notifyDataSetChanged();
 
-        headerAdapter.setOnItemClickListener((v, position) -> {
-            //TODO #8.1 make an intent to DetailActivity (get the name of the meal from the edit text view, then send the name of the meal to DetailActivity)
-        });
+//        headerAdapter.setOnItemClickListener((v, position) -> {
+//            Toast.makeText(this, meal.get(posit), Toast.LENGTH_SHORT).show();
+//        });
+
     }
 
     @Override

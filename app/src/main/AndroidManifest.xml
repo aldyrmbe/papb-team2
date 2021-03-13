@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Developed by Haerul Muttaqin
-  Last modified 3/17/19 5:24 AM
-  Subscribe : https://www.youtube.com/haerulmuttaqin
-  Copyright (c) 2019. All rights reserved
+  Developed by Kelompok 2 PAPB
   -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.haerul.foodsapp">
@@ -35,7 +32,7 @@
         <!--TODO #1 Add DetailActivity (DONE)-->
         <activity
             android:name=".view.detail.DetailActivity"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

@@ -20,6 +20,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.haerul.foodsapp.R;
 import com.haerul.foodsapp.Utils;
 import com.haerul.foodsapp.adapter.RecyclerViewHomeAdapter;
@@ -78,9 +79,13 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
         viewPagerMeal.setPadding(20, 0, 150, 0);
         headerAdapter.notifyDataSetChanged();
 
-//        headerAdapter.setOnItemClickListener((v, position) -> {
-//            Toast.makeText(this, meal.get(posit), Toast.LENGTH_SHORT).show();
-//        });
+        headerAdapter.setOnItemClickListener((v, position) -> {
+            //TODO #8.1 make an intent to DetailActivity
+            TextView mealName = viewPagerMeal.findViewById(R.id.mealName);
+            Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+            intent.putExtra(EXTRA_DETAIL, mealName.getText().toString());
+            startActivity(intent);
+        });
 
     }
 

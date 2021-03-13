@@ -1,12 +1,7 @@
-/*-----------------------------------------------------------------------------
- - Developed by Haerul Muttaqin                                               -
- - Last modified 3/24/19 1:02 PM                                              -
- - Subscribe : https://www.youtube.com/haerulmuttaqin                         -
- - Copyright (c) 2019. All rights reserved                                    -
- -----------------------------------------------------------------------------*/
 package com.haerul.foodsapp.view.category;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,6 +20,7 @@ import com.haerul.foodsapp.R;
 import com.haerul.foodsapp.Utils;
 import com.haerul.foodsapp.adapter.RecyclerViewMealByCategory;
 import com.haerul.foodsapp.model.Meals;
+import com.haerul.foodsapp.view.detail.DetailActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -32,6 +28,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+import static com.haerul.foodsapp.view.home.HomeActivity.EXTRA_DETAIL;
 
 public class CategoryFragment extends Fragment implements CategoryView {
 
@@ -98,6 +96,10 @@ public class CategoryFragment extends Fragment implements CategoryView {
         
         adapter.setOnItemClickListener((view, position) -> {
             //TODO #8.2 make an intent to DetailActivity (get the name of the meal from the edit text view, then send the name of the meal to DetailActivity)
+            TextView mealName = view.findViewById(R.id.mealName);
+            Intent intent = new Intent(getActivity(), DetailActivity.class);
+            intent.putExtra(EXTRA_DETAIL, mealName.getText().toString());
+            startActivity(intent);
         });
     }
 

@@ -11,7 +11,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+
 import android.widget.Toast;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -79,6 +81,7 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
 //        headerAdapter.setOnItemClickListener((v, position) -> {
 //            Toast.makeText(this, meal.get(posit), Toast.LENGTH_SHORT).show();
 //        });
+
     }
 
     @Override

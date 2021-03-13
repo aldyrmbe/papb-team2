@@ -4,7 +4,7 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.haerul.foodsapp">
+    package="com.team2.foodrecipes">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".view.home.HomeActivity"
+            android:name="com.team2.foodrecipes.view.home.HomeActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,13 +26,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.category.CategoryActivity"
+            android:name="com.team2.foodrecipes.view.category.CategoryActivity"
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait"
             android:label="Category"/>
         <!--TODO #1 Add DetailActivity (DONE)-->
         <activity
-            android:name=".view.detail.DetailActivity"
+            android:name="com.team2.foodrecipes.view.detail.DetailActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 

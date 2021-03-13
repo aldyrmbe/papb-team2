@@ -68,7 +68,6 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
 
     @Override
     public void hideLoading() {
-        findViewById(R.id.shimmerMeal).setVisibility(View.GONE);
         findViewById(R.id.shimmerCategory).setVisibility(View.GONE);
     }
 

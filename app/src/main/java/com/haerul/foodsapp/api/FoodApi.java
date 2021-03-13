@@ -16,7 +16,6 @@ import retrofit2.http.Query;
 public interface FoodApi {
 
     @GET("random.php")
-
     Call<Meals> getMeal();
 
     @GET("categories.php")
@@ -27,5 +26,5 @@ public interface FoodApi {
 
     //TODO #3 Call the search.php with query string the meal name (DONE)
     @GET("search.php")
-    Call<Meals> getMealByName(@Query("name") String mealName);
+    Call<Meals> getMealByName(@Query("s") String mealName);
 }

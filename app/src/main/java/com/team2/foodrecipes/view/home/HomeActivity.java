@@ -9,8 +9,10 @@ package com.team2.foodrecipes.view.home;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.app.Dialog;
 
@@ -68,6 +70,11 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
         super.onResume();
         mDialog.setContentView(R.layout.popup);
         mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        mDialog.findViewById(R.id.linkBut).setOnClickListener(view -> {
+            Uri uri = Uri.parse("http://www.hypermart.co.id/jawabali/");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+        });
         mDialog.show();
     }
 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Developed by Haerul Muttaqin
+  Last modified 3/21/21 5:50 PM
+  Subscribe : https://www.youtube.com/haerulmuttaqin
+  Copyright (c) 2021. All rights reserved
+  -->
+
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@drawable/promo3_background"/>
+    <foreground android:drawable="@mipmap/promo3_foreground"/>
+</adaptive-icon>

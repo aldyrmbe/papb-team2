@@ -7,9 +7,12 @@
 package com.team2.foodrecipes.view.home;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.app.Dialog;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,6 +46,8 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
     @BindView(R.id.recyclerCategory)
     RecyclerView recyclerViewCategory;
 
+    Dialog mDialog;
+
     HomePresenter presenter;
 
     @Override
@@ -51,9 +56,19 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
 
+        mDialog = new Dialog(this);
+
         presenter = new HomePresenter(this);
         presenter.getMeals();
         presenter.getCategories();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mDialog.setContentView(R.layout.popup);
+        mDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        mDialog.show();
     }
 
     @Override

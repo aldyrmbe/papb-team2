@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.app.Dialog;
+import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -66,9 +67,6 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
-
-        mDialog = new Dialog(this);
-
         presenter = new HomePresenter(this);
         presenter.getMeals();
         presenter.getCategories();
@@ -77,6 +75,7 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
     @Override
     protected void onResume() {
         super.onResume();
+        mDialog = new Dialog(this);
         int random = new Random().nextInt(3)+1;
         mDialog.setContentView(R.layout.popup);
         ImageView promoImage = (ImageView) mDialog.findViewById(R.id.imagePromo);
@@ -105,6 +104,12 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
         });
         mDialog.show();
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(getApplicationContext(), "Aplikasi ditutup, silakan buka lagi", Toast.LENGTH_SHORT).show();
     }
 
     @Override

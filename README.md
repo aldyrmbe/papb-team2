@@ -27,6 +27,9 @@ This project is maintained by Team 2 of Pengembangan Aplikasi Piranti Bergerak s
 * [Virginia Putri Mori](https://github.com/virginiaritonga)
 * [Mhd Rizaldy Andrian Rambe](https://github.com/aldyrmbe)
 
+## Changelog
+You can see full changelog [here](https://github.com/aldyrmbe/papb-team2/blob/main/changelog.md)
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 

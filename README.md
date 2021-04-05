@@ -2,6 +2,12 @@
 
 **Food Recipe App** is an android application that shows recipes recommendation, detailed and categorized recipes, and promotional food from external source. This application use [themealdb](https://www.themealdb.com)
  as an external API.
+ 
+Food Recipe Lifecycle overview:
+* onCreate(): Load splash screen, get meals and categories on home screen, get data from intent to detail screen, and put the name of the meal name from the data intent to the detail presenter
+* onResume(): Show ads pop up from three random ads
+* onDestroy(): Show exit app toaster
+  
 
 ## Installation
 Clone this repository to your local machine

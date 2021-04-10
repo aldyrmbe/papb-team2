@@ -10,8 +10,8 @@ On the category page, you can select the menu by clicking the button that contai
 
 Food Recipe Lifecycle overview:
 * [onCreate()](https://developer.android.com/guide/components/activities/activity-lifecycle#oncreate): This method loads the splash screen when opening the app, set the user interface layout for HomeActivity, get meals and categories from API on HomeActivity, get data from intent to DetailActivity, and put the name of the meal name from the data intent to DetailPresenter.
-* [onResume()](https://developer.android.com/guide/components/activities/activity-lifecycle#onresume): Show ads pop up from three random ads
-* [onDestroy()](https://developer.android.com/reference/android/app/Activity#onDestroy()): Show exit app toaster
+* [onResume()](https://developer.android.com/guide/components/activities/activity-lifecycle#onresume): This method shows ads pop up from three random ads in HomeActivity.
+* [onDestroy()](https://developer.android.com/reference/android/app/Activity#onDestroy()): This method shows an exit app toaster when HomeActivity is finishing.
 
 ## Installation
 Clone this repository to your local machine

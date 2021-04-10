@@ -54,3 +54,24 @@ If you need assistance, please contact one of the following emails, with the sub
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Screenshot
+Home
+
+<img src="./screenshots/Home.png" style="width: 270px; height: 480px;">
+
+Category Page
+
+<img src="./screenshots/Category%20Page.png" style="width: 270px; height: 480px;">
+
+Detail Page 
+
+<img src="./screenshots/Detail%20Page.png" style="width: 270px; height: 480px;">
+
+Detail Page - 2 
+
+<img src="./screenshots/Detail%20Page%202.png" style="width: 270px; height: 480px;">
+
+Promo Banner
+
+<img src="./screenshots/Promo%20Banner.png" style="width: 270px; height: 480px;">

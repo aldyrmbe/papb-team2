@@ -4,6 +4,7 @@
  as an external API.
 
 Food Recipe Screen and Navigation Overview:
+
 This application has three mains screen, which are home, category, and detail. We use buttons to navigate between those screens. From the homepage, you can navigate to the category page using a button with specific categories. You can also navigate to the detail page by clicking a menu that appears on the banner.
 On the category page, you can select the menu by clicking the button that contains the name of the menu. You can navigate back to the previous screen using the back button.
 

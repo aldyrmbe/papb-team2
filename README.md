@@ -4,9 +4,9 @@
  as an external API.
  
 Food Recipe Lifecycle overview:
-* onCreate(): Load splash screen, get meals and categories on home screen, get data from intent to detail screen, and put the name of the meal name from the data intent to the detail presenter
-* onResume(): Show ads pop up from three random ads
-* onDestroy(): Show exit app toaster
+* [onCreate()](https://developer.android.com/guide/components/activities/activity-lifecycle#oncreate): This method loads the splash screen when opening the app, set the user interface layout for HomeActivity, get meals and categories from API on HomeActivity, get data from intent to DetailActivity, and put the name of the meal name from the data intent to DetailPresenter.
+* [onResume()](https://developer.android.com/guide/components/activities/activity-lifecycle#onresume): Show ads pop up from three random ads
+* [onDestroy()](https://developer.android.com/reference/android/app/Activity#onDestroy()): Show exit app toaster
 
 ## Installation
 Clone this repository to your local machine

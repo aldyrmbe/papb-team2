@@ -58,20 +58,20 @@ If you need assistance, please contact one of the following emails, with the sub
 ## Screenshot
 Home
 
-<img src="./screenshots/Home.png" style="width: 270px; height: 480px;">
+<img src="./screenshots/Home.png" width="270" height="480">
 
 Category Page
 
-<img src="./screenshots/Category%20Page.png" style="width: 270px; height: 480px;">
+<img src="./screenshots/Category%20Page.png" width="270" height="480">
 
 Detail Page 
 
-<img src="./screenshots/Detail%20Page.png" style="width: 270px; height: 480px;">
+<img src="./screenshots/Detail%20Page.png" width="270" height="480">
 
 Detail Page - 2 
 
-<img src="./screenshots/Detail%20Page%202.png" style="width: 270px; height: 480px;">
+<img src="./screenshots/Detail%20Page%202.png" width="270" height="480">
 
 Promo Banner
 
-<img src="./screenshots/Promo%20Banner.png" style="width: 270px; height: 480px;">
+<img src="./screenshots/Promo%20Banner.png" width="270" height="480">

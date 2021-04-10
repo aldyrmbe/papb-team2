@@ -11,7 +11,7 @@ On the category page, you can select the menu by clicking the button that contai
 Food Recipe Lifecycle overview:
 * [onCreate()](https://developer.android.com/guide/components/activities/activity-lifecycle#oncreate): This method loads the splash screen when opening the app, set the user interface layout for HomeActivity, get meals and categories from API on HomeActivity, get data from intent to DetailActivity, and put the name of the meal name from the data intent to DetailPresenter.
 * [onResume()](https://developer.android.com/guide/components/activities/activity-lifecycle#onresume): This method shows ads pop up from three random ads in HomeActivity.
-* [onDestroy()](https://developer.android.com/reference/android/app/Activity#onDestroy()): This method shows an exit app toaster when HomeActivity is finishing.
+* [onDestroy()](https://developer.android.com/guide/components/activities/activity-lifecycle#ondestroy): This method shows an exit app toaster when HomeActivity is finishing.
 
 ## Installation
 Clone this repository to your local machine
@@ -37,10 +37,10 @@ This application requires full network access.
 
 ## Maintainers
 This project is maintained by Team 2 of Pengembangan Aplikasi Piranti Bergerak subject, consist of:
-* [Mhd Rizaldy Andrian Rambe](https://github.com/aldyrmbe)
-* [Adib Wirawan P](https://github.com/Siradrawanp)
-* [Virginia Putri Mori](https://github.com/virginiaritonga)
-* [Fajar Ryan Akhra](https://github.com/ryanakhra2)
+* [Mhd Rizaldy Andrian Rambe](https://github.com/aldyrmbe) - 18/431397/TK/47990
+* [Adib Wirawan P](https://github.com/Siradrawanp) - 18/429051/TK/47553
+* [Virginia Putri Mori](https://github.com/virginiaritonga) - 18/431410/TK/48003
+* [Fajar Ryan Akhra](https://github.com/ryanakhra2) - 18/425307/TK/47002
 
 ## Contributing
 We currently only accept contributions from collaborators.

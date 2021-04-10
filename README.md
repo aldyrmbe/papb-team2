@@ -36,7 +36,7 @@ This project is maintained by Team 2 of Pengembangan Aplikasi Piranti Bergerak s
 We currently only accept contributions from collaborators.
 
 ## Support
-If you need assistance, please contact one of the following emails, with the subject "Ask - Food Recipe App":
+If you need assistance, please contact one of the following emails with the subject "Ask - Food Recipe App":
 1. mhdrizaldy@mail.ugm.ac.id (Aldy)
 2. adib.w.p@mail.ugm.ac.id (Adib)
 3. virginia.p.m@mail.ugm.ac.id (Virginia)

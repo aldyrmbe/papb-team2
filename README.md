@@ -7,7 +7,6 @@ Food Recipe Lifecycle overview:
 * onCreate(): Load splash screen, get meals and categories on home screen, get data from intent to detail screen, and put the name of the meal name from the data intent to the detail presenter
 * onResume(): Show ads pop up from three random ads
 * onDestroy(): Show exit app toaster
-  
 
 ## Installation
 Clone this repository to your local machine
@@ -28,18 +27,20 @@ This application requires full network access.
 
 ## Maintainers
 This project is maintained by Team 2 of Pengembangan Aplikasi Piranti Bergerak subject, consist of:
-* [Adib Wirawan P](https://github.com/Siradrawanp)
-* [Fajar Ryan Akhra](https://github.com/ryanakhra2)
-* [Virginia Putri Mori](https://github.com/virginiaritonga)
 * [Mhd Rizaldy Andrian Rambe](https://github.com/aldyrmbe)
-
-## Changelog
-You can see full changelog [here](https://github.com/aldyrmbe/papb-team2/blob/main/changelog.md)
+* [Adib Wirawan P](https://github.com/Siradrawanp)
+* [Virginia Putri Mori](https://github.com/virginiaritonga)
+* [Fajar Ryan Akhra](https://github.com/ryanakhra2)
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+We currently only accept contributions from collaborators.
 
-Please make sure to update tests as appropriate.
+## Support
+If you need assistance, please contact one of the following emails with the subject "Ask - Food Recipe App":
+1. mhdrizaldy@mail.ugm.ac.id (Aldy)
+2. adib.w.p@mail.ugm.ac.id (Adib)
+3. virginia.p.m@mail.ugm.ac.id (Virginia)
+4. fajar.ryan.akhra@mail.ugm.ac.id (Ryan)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

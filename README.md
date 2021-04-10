@@ -2,7 +2,11 @@
 
 **Food Recipe App** is an android application that shows recipes recommendation, detailed and categorized recipes, and promotional food from external source. This application use [themealdb](https://www.themealdb.com)
  as an external API.
- 
+
+Food Recipe Screen and Navigation Overview:
+This application has three mains screen, which are home, category, and detail. We use buttons to navigate between those screens. From the homepage, you can navigate to the category page using a button with specific categories. You can also navigate to the detail page by clicking a menu that appears on the banner.
+On the category page, you can select the menu by clicking the button that contains the name of the menu. You can navigate back to the previous screen using the back button.
+
 Food Recipe Lifecycle overview:
 * onCreate(): Load splash screen, get meals and categories on home screen, get data from intent to detail screen, and put the name of the meal name from the data intent to the detail presenter
 * onResume(): Show ads pop up from three random ads
@@ -21,7 +25,12 @@ This android app lets you:
 * Find a specific food recipe
 * Browse and explore lots of food categories 
 * View detailed information about the recipe, such as instruction, ingredients, youtube video link, and other external link.
-  
+
+## Architecture Pattern
+This app use MVP (Model View Presenter) android architecture pattern. The reason we use this architecture is that the data used comes from a third party. This application fetches the data using API from [themealdb](https://www.themealdb.com) and processes it, then presents it using our user interfaces.
+In short, this application model fetches the data using API. The presenter takes care of the navigation and logic process as the middleman between model and view. Views are the UI for the data.
+Another reason is that the codes are easier to understand and maintain.
+
 ## Permissions
 This application requires full network access.
 

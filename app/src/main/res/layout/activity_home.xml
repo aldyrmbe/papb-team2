@@ -39,6 +39,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+            <ImageView
+                android:id="@+id/bookmarkIcon"
+                android:layout_width="30dp"
+                android:layout_marginRight="20dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/love_putih"
+                />
+
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardSearch"
                 android:layout_below="@id/title"

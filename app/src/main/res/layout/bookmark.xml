@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Developed by Haerul Muttaqin
+  Last modified 4/29/21 8:55 PM
+  Subscribe : https://www.youtube.com/haerulmuttaqin
+  Copyright (c) 2021. All rights reserved
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ImageView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text=""
+        >
+    </TextView>
+</RelativeLayout>

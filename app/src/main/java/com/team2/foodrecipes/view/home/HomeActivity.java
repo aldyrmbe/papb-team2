@@ -27,6 +27,7 @@ import com.team2.foodrecipes.adapter.RecyclerViewHomeAdapter;
 import com.team2.foodrecipes.adapter.ViewPagerHeaderAdapter;
 import com.team2.foodrecipes.model.Categories;
 import com.team2.foodrecipes.model.Meals;
+import com.team2.foodrecipes.view.bookmark.BookmarkActivity;
 import com.team2.foodrecipes.view.category.CategoryActivity;
 import com.team2.foodrecipes.view.detail.DetailActivity;
 
@@ -51,6 +52,7 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
     @BindView(R.id.recyclerCategory)
     RecyclerView recyclerViewCategory;
 
+    private ImageView bookmarkImage;
 
     Dialog mDialog;
 
@@ -64,6 +66,19 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
         presenter = new HomePresenter(this);
         presenter.getMeals();
         presenter.getCategories();
+
+        bookmarkImage = (ImageView) findViewById(R.id.bookmarkIcon);
+//        bookmarkImage.setOnClickListener(view -> {
+//                Intent intent = new Intent(HomeActivity.this, BookmarkActivity.class);
+//                startActivity(intent);
+//        });
+        bookmarkImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeActivity.this, BookmarkActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -26,6 +26,10 @@
             android:name="com.team2.foodrecipes.view.bookmark.BookmarkActivity"
             android:theme="@style/AppTheme">
         </activity>
+        <activity
+            android:name="com.team2.foodrecipes.view.bookmark.AddNewRecipeActivity"
+            android:theme="@style/AppTheme">
+        </activity>
 
         <activity
             android:name="com.team2.foodrecipes.view.home.HomeActivity"

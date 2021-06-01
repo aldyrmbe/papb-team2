@@ -23,6 +23,7 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.team2.foodrecipes.R;
 import com.team2.foodrecipes.Utils;
+import com.team2.foodrecipes.db.AppDatabase;
 import com.team2.foodrecipes.model.Meals;
 import com.squareup.picasso.Picasso;
 
@@ -69,23 +70,30 @@ public class DetailActivity extends AppCompatActivity implements DetailView { //
     
     @BindView(R.id.source)
     TextView source;
+
+    AppDatabase db;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         ButterKnife.bind(this);
+        String namaMasak;
 
         setupActionBar();
         
         //TODO #9 Get data from the intent
         Intent intent = getIntent();
-        String mealName = intent.getStringExtra(EXTRA_DETAIL);
 
-        //TODO #10 Declare the presenter (put the name of the meal name from the data intent to the presenter)
-        DetailPresenter presenter = new DetailPresenter((DetailView) this);
-        presenter.getMealById(mealName);
-
+        if (intent.getStringExtra("namaMasak") != null){
+            namaMasak = intent.getStringExtra("namaMasak");
+            setMakanan(namaMasak);
+        }else {
+            String mealName = intent.getStringExtra(EXTRA_DETAIL);
+            //TODO #10 Declare the presenter (put the name of the meal name from the data intent to the presenter)
+            DetailPresenter presenter = new DetailPresenter((DetailView) this);
+            presenter.getMealById(mealName);
+        }
 
     }
 
@@ -144,6 +152,12 @@ public class DetailActivity extends AppCompatActivity implements DetailView { //
     @Override
     public void hideLoading() {
         progressBar.setVisibility(View.INVISIBLE);
+    }
+
+    private void setMakanan(String namaMasak) {
+        db = AppDatabase.getDbInstance(this.getApplicationContext());
+        collapsingToolbarLayout.setTitle(namaMasak);
+        setupActionBar();
     }
 
     @Override

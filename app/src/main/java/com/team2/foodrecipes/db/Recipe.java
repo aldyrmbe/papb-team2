@@ -15,4 +15,12 @@ public class Recipe {
     @ColumnInfo(name = "recipe_detail")
     public String recipeDetail;
 
+    @ColumnInfo(name = "uri")
+    public String uri;
+
+    @ColumnInfo(name = "kategori")
+    public String kategori;
+
+    @ColumnInfo(name = "negara")
+    public String negara;
 }

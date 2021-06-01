@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.bookmark.AddNewRecipeActivity">
+    tools:context=".view.bookmark.AddNewRecipeActivity"
+    android:padding="10dp">
 
 
     <EditText android:id="@+id/recipeNameInput"
@@ -13,20 +14,34 @@
         android:layout_height="wrap_content"
         android:hint="Enter recipe name"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="10dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-
         android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/kategorInput"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recipeNameInput"
+        android:layout_height="wrap_content"
+        android:hint="Enter recipe category"
+        />
+
+    <EditText
+        android:id="@+id/negaraInput"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/kategorInput"
+        android:layout_height="wrap_content"
+        android:hint="Enter origin of the recipe"
+        />
 
     <EditText android:id="@+id/detailInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter recipe detail"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/recipeNameInput"
-
+        app:layout_constraintTop_toBottomOf="@+id/negaraInput"
         />
 
     <Button android:id="@+id/saveButton"

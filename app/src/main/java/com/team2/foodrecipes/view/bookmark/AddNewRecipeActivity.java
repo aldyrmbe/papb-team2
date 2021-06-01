@@ -37,8 +37,6 @@ public class AddNewRecipeActivity extends AppCompatActivity {
             }
         });
 
-
-
     }
 
     private void saveNewRecipe (String recipeName, String detail) {

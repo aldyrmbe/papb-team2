@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,51 +9,52 @@
     tools:context=".view.bookmark.AddNewRecipeActivity"
     android:padding="10dp">
 
-
-    <EditText android:id="@+id/recipeNameInput"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter recipe name"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:autofillHints="" />
+        android:paddingTop="20dp"
+        android:layout_above="@id/saveButton">
 
-    <EditText
-        android:id="@+id/kategorInput"
-        android:layout_width="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/recipeNameInput"
-        android:layout_height="wrap_content"
-        android:hint="Enter recipe category"
-        />
+        <EditText
+            android:id="@+id/recipeNameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter recipe name"
+            android:paddingTop="10dp"
+            android:autofillHints=""/>
 
-    <EditText
-        android:id="@+id/negaraInput"
-        android:layout_width="match_parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/kategorInput"
-        android:layout_height="wrap_content"
-        android:hint="Enter origin of the recipe"
-        />
+        <EditText
+            android:id="@+id/kategorInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter recipe category"
+            android:layout_below="@id/recipeNameInput"
+            android:paddingTop="10dp"/>
 
-    <EditText android:id="@+id/detailInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter recipe detail"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/negaraInput"
-        />
+        <EditText
+            android:id="@+id/negaraInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/kategorInput"
+            android:paddingTop="10dp"
+            android:hint="Enter origin of the recipe"/>
+
+        <EditText
+            android:id="@+id/detailInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter recipe detail"
+            android:layout_below="@id/negaraInput"
+            android:paddingTop="10dp"/>
+
+    </RelativeLayout>
 
     <Button android:id="@+id/saveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_alignParentBottom="true"
         android:text="Save"
         android:textAllCaps="false"
-
         />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

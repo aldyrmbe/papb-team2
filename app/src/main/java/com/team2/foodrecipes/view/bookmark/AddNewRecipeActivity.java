@@ -30,21 +30,32 @@ public class AddNewRecipeActivity extends AppCompatActivity {
         EditText recipeNameInput = findViewById(R.id.recipeNameInput);
         EditText detailInput = findViewById(R.id.detailInput);
         Button saveButton = findViewById(R.id.saveButton);
+        EditText kategoriInput = findViewById(R.id.kategorInput);
+        EditText negaraInput = findViewById(R.id.negaraInput);
+        String recipeName, detail, kategori, negara;
+
+        recipeName = recipeNameInput.getText().toString();
+        detail = detailInput.getText().toString();
+        kategori = kategoriInput.getText().toString();
+        negara = negaraInput.getText().toString();
+
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                saveNewRecipe(recipeNameInput.getText().toString(), detailInput.getText().toString());
+                saveNewRecipe(recipeName, detail, kategori, negara);
             }
         });
 
     }
 
-    private void saveNewRecipe (String recipeName, String detail) {
+    private void saveNewRecipe (String recipeName, String detail, String kategori, String negara) {
         AppDatabase db = AppDatabase.getDbInstance(this.getApplicationContext());
 
         Recipe recipe = new Recipe();
         recipe.recipeName = recipeName;
         recipe.recipeDetail = detail;
+        recipe.kategori = kategori;
+        recipe.negara = negara;
         db.recipeDao().insertRecipe(recipe);
 
         finish();

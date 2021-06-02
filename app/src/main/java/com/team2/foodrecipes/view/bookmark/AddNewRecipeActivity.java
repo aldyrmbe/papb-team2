@@ -7,6 +7,9 @@
 package com.team2.foodrecipes.view.bookmark;
 
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -15,6 +18,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -25,6 +29,8 @@ import android.widget.EditText;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.FileProvider;
 
 import com.team2.foodrecipes.R;
@@ -64,6 +70,18 @@ public class AddNewRecipeActivity extends AppCompatActivity {
         EditText bahanInput = findViewById(R.id.bahanInput);
         thumb = findViewById(R.id.inputThumb);
 
+        // build channel untuk notification jika android versi diatas Oreo
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel("Notification", "Notification", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
+
+        //tap action buat notif
+        Intent intent = new Intent(this, BookmarkActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,10 +92,23 @@ public class AddNewRecipeActivity extends AppCompatActivity {
                         negaraInput.getText().toString(),
                         bahanInput.getText().toString()
                 );
+
+                //buat simple notif
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(getApplicationContext(), "Notification")
+                        .setSmallIcon(R.drawable.ic_favorite)
+                        .setContentTitle("Recipe Saved")
+                        .setContentText("You just saved " + recipeNameInput.getText().toString())
+                        .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                        .setContentIntent(pendingIntent)
+                        .setAutoCancel(true);
+
+                //show notif
+                NotificationManagerCompat notificationManager = NotificationManagerCompat.from(getApplicationContext());
+                notificationManager.notify(1, builder.build());
             }
         });
 
-        //not functioning (progress)
+        //not functioning (progress) buat save gambar ke directory
         addImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

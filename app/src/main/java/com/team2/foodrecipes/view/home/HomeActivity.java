@@ -140,7 +140,6 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
         headerAdapter.notifyDataSetChanged();
 
         headerAdapter.setOnItemClickListener((v, position) -> {
-            //TODO #8.1 make an intent to DetailActivity
             TextView mealName = viewPagerMeal.findViewById(R.id.mealName);
             Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
             intent.putExtra(EXTRA_DETAIL, mealName.getText().toString());

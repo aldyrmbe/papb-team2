@@ -17,11 +17,9 @@ public class DetailPresenter {
     }
 
     void getMealById(String mealName) {
-        
-        //TODO #5 Call the void show loading before starting to make a request to the server (DONE)
+
         view.showLoading();
-        
-        //TODO #6 Make a request to the server (Don't forget to hide loading when the response is received) (DONE)
+
         Utils.getApi().getMealByName(mealName)
                 .enqueue(new Callback<Meals>() {
                     @Override
@@ -41,6 +39,5 @@ public class DetailPresenter {
 
                     }
                 });
-        //TODO #7 Set response (meal)
     }
 }

@@ -45,7 +45,6 @@
             android:label="Category">
         </activity>
 
-        <!--TODO #1 Add DetailActivity (DONE)-->
         <activity
             android:name="com.team2.foodrecipes.view.detail.DetailActivity"
             android:theme="@style/AppTheme.NoActionBar">

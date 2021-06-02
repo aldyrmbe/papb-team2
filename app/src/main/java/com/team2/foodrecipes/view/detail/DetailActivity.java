@@ -36,7 +36,7 @@ import butterknife.ButterKnife;
 
 import static com.team2.foodrecipes.view.home.HomeActivity.EXTRA_DETAIL;
 
-public class DetailActivity extends AppCompatActivity implements DetailView { //TODO #11  implement DetailView
+public class DetailActivity extends AppCompatActivity implements DetailView {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -84,8 +84,7 @@ public class DetailActivity extends AppCompatActivity implements DetailView { //
         String namaMasak;
 
         setupActionBar();
-        
-        //TODO #9 Get data from the intent
+
         Intent intent = getIntent();
 
         if (intent.getStringExtra("namaMasak") != null){
@@ -93,7 +92,6 @@ public class DetailActivity extends AppCompatActivity implements DetailView { //
             setMakanan(namaMasak);
         }else {
             String mealName = intent.getStringExtra(EXTRA_DETAIL);
-            //TODO #10 Declare the presenter (put the name of the meal name from the data intent to the presenter)
             DetailPresenter presenter = new DetailPresenter((DetailView) this);
             presenter.getMealById(mealName);
         }

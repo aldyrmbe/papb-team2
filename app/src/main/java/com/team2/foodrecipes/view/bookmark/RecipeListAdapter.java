@@ -2,9 +2,11 @@
 package com.team2.foodrecipes.view.bookmark;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -43,6 +45,8 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.My
     @Override
     public void onBindViewHolder(@NonNull RecipeListAdapter.MyViewHolder holder, int position) {
         holder.tvRecipeName.setText(this.recipeList.get(position).recipeName);
+        //load default image
+        holder.imagePre.setImageResource(R.drawable.sample_image_meal);
         //holder.tvRecipeDetail.setText(this.recipeList.get(position).recipeDetail);
     }
 
@@ -54,10 +58,12 @@ public class RecipeListAdapter extends RecyclerView.Adapter<RecipeListAdapter.My
     public static class MyViewHolder extends  RecyclerView.ViewHolder implements View.OnClickListener{
         TextView tvRecipeName;
         TextView tvRecipeDetail;
+        ImageView imagePre;
         public MyViewHolder(View view){
             super(view);
             tvRecipeName = view.findViewById(R.id.mealName);
             //tvRecipeDetail = view.findViewById(R.id.tvRecipeDetail);
+            imagePre = view.findViewById(R.id.mealThumb);
             itemView.setOnClickListener(this);
 
         }

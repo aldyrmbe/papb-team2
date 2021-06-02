@@ -23,4 +23,7 @@ public class Recipe {
 
     @ColumnInfo(name = "negara")
     public String negara;
+
+    @ColumnInfo(name = "bahan")
+    public String bahan;
 }

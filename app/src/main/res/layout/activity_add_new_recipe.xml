@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,20 +6,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.bookmark.AddNewRecipeActivity"
-    android:padding="10dp">
+    android:layout_margin="10dp">
 
     <RelativeLayout
+        android:id="@+id/layInpur"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:layout_above="@id/saveButton">
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true">
 
         <EditText
             android:id="@+id/recipeNameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter recipe name"
-            android:paddingTop="10dp"
+            android:layout_marginTop="10dp"
+            android:inputType="text"
             android:autofillHints=""/>
 
         <EditText
@@ -28,33 +29,69 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter recipe category"
+            android:inputType="text"
             android:layout_below="@id/recipeNameInput"
-            android:paddingTop="10dp"/>
+            android:layout_marginTop="10dp"/>
 
         <EditText
             android:id="@+id/negaraInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/kategorInput"
-            android:paddingTop="10dp"
-            android:hint="Enter origin of the recipe"/>
+            android:layout_marginTop="10dp"
+            android:hint="Enter origin of the recipe"
+            android:inputType="text"/>
 
         <EditText
             android:id="@+id/detailInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="50dp"
             android:hint="Enter recipe detail"
             android:layout_below="@id/negaraInput"
-            android:paddingTop="10dp"/>
+            android:inputType="textMultiLine"
+            android:layout_marginTop="10dp"/>
+
+        <EditText
+            android:id="@+id/bahanInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:hint="Enter ingredients"
+            android:layout_below="@id/detailInput"
+            android:inputType="textMultiLine"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:id="@+id/inputThumb"
+            android:layout_below="@id/bahanInput"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/sample_image_meal"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            />
 
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/addImageButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/saveButton"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Add Image"
+        android:textAllCaps="false"
+        android:visibility="gone"/>
 
     <Button android:id="@+id/saveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
         android:text="Save"
-        android:textAllCaps="false"
-        />
+        android:textAllCaps="false"/>
 
 </RelativeLayout>

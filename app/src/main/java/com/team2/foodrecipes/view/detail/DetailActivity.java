@@ -24,9 +24,12 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.team2.foodrecipes.R;
 import com.team2.foodrecipes.Utils;
 import com.team2.foodrecipes.db.AppDatabase;
+import com.team2.foodrecipes.db.Recipe;
 import com.team2.foodrecipes.model.Meals;
 import com.squareup.picasso.Picasso;
 
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -157,7 +160,15 @@ public class DetailActivity extends AppCompatActivity implements DetailView { //
     private void setMakanan(String namaMasak) {
         db = AppDatabase.getDbInstance(this.getApplicationContext());
         collapsingToolbarLayout.setTitle(namaMasak);
+        category.setText(db.recipeDao().getKategori(namaMasak));
+        country.setText(db.recipeDao().getNegara(namaMasak));
+        instructions.setText(db.recipeDao().getDetail(namaMasak));
+        ingredients.setText(db.recipeDao().getBahan(namaMasak));
+
+        //set default image
+        Picasso.get().load(R.drawable.sample_image_meal).into(mealThumb);
         setupActionBar();
+        hideLoading();
     }
 
     @Override

@@ -23,16 +23,20 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.team2.foodrecipes.R;
 import com.team2.foodrecipes.Utils;
+import com.team2.foodrecipes.db.AppDatabase;
+import com.team2.foodrecipes.db.Recipe;
 import com.team2.foodrecipes.model.Meals;
 import com.squareup.picasso.Picasso;
 
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.team2.foodrecipes.view.home.HomeActivity.EXTRA_DETAIL;
 
-public class DetailActivity extends AppCompatActivity implements DetailView { //TODO #11  implement DetailView
+public class DetailActivity extends AppCompatActivity implements DetailView {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -69,23 +73,28 @@ public class DetailActivity extends AppCompatActivity implements DetailView { //
     
     @BindView(R.id.source)
     TextView source;
+
+    AppDatabase db;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         ButterKnife.bind(this);
+        String namaMasak;
 
         setupActionBar();
-        
-        //TODO #9 Get data from the intent
+
         Intent intent = getIntent();
-        String mealName = intent.getStringExtra(EXTRA_DETAIL);
 
-        //TODO #10 Declare the presenter (put the name of the meal name from the data intent to the presenter)
-        DetailPresenter presenter = new DetailPresenter((DetailView) this);
-        presenter.getMealById(mealName);
-
+        if (intent.getStringExtra("namaMasak") != null){
+            namaMasak = intent.getStringExtra("namaMasak");
+            setMakanan(namaMasak);
+        }else {
+            String mealName = intent.getStringExtra(EXTRA_DETAIL);
+            DetailPresenter presenter = new DetailPresenter((DetailView) this);
+            presenter.getMealById(mealName);
+        }
 
     }
 
@@ -144,6 +153,20 @@ public class DetailActivity extends AppCompatActivity implements DetailView { //
     @Override
     public void hideLoading() {
         progressBar.setVisibility(View.INVISIBLE);
+    }
+
+    private void setMakanan(String namaMasak) {
+        db = AppDatabase.getDbInstance(this.getApplicationContext());
+        collapsingToolbarLayout.setTitle(namaMasak);
+        category.setText(db.recipeDao().getKategori(namaMasak));
+        country.setText(db.recipeDao().getNegara(namaMasak));
+        instructions.setText(db.recipeDao().getDetail(namaMasak));
+        ingredients.setText(db.recipeDao().getBahan(namaMasak));
+
+        //set default image
+        Picasso.get().load(R.drawable.sample_image_meal).into(mealThumb);
+        setupActionBar();
+        hideLoading();
     }
 
     @Override

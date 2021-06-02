@@ -18,4 +18,19 @@ public interface RecipeDao {
 
     @Delete
     void delete(Recipe recipe);
+
+    @Query("SELECT kategori FROM recipe WHERE recipe_name = (:namaMasak)")
+    String getKategori(String namaMasak);
+
+    @Query("SELECT negara FROM recipe WHERE recipe_name = (:namaMasak)")
+    String getNegara(String namaMasak);
+
+    @Query("SELECT recipe_detail FROM recipe WHERE recipe_name = (:namaMasak)")
+    String getDetail(String namaMasak);
+
+    @Query("SELECT bahan FROM recipe WHERE recipe_name = (:namaMasak)")
+    String getBahan(String namaMasak);
+
+    @Query("SELECT uri FROM recipe WHERE recipe_name = (:namaMasak)")
+    String getUri(String namaMasak);
 }

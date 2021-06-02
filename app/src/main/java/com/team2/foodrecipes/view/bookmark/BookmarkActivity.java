@@ -67,12 +67,27 @@ public class BookmarkActivity extends AppCompatActivity {
     private void initRecyclerView() {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        //recyclerView.setLayoutManager(new GridLayoutManager(this,2));
 
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);
         recipeListAdapter = new RecipeListAdapter(this);
-        new ItemTouchHelper(itemTouchHelperCallback).attachToRecyclerView(recyclerView);
+
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT|ItemTouchHelper.LEFT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                int position = viewHolder.getAdapterPosition();
+                Recipe recipe = recipeListAdapter.getRecipe(position);
+                db.recipeDao().delete(recipe);
+                loadRecipeList();
+                recipeListAdapter.notifyDataSetChanged();
+            }
+        }).attachToRecyclerView(recyclerView);
+
         recipeListAdapter.notifyDataSetChanged();
         recyclerView.setAdapter(recipeListAdapter);
     }
@@ -90,21 +105,4 @@ public class BookmarkActivity extends AppCompatActivity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
-
-    ItemTouchHelper.SimpleCallback itemTouchHelperCallback =
-            new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT|ItemTouchHelper.LEFT) {
-        @Override
-        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
-            return false;
-        }
-
-        @Override
-        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-            int position = viewHolder.getAdapterPosition();
-            Recipe recipe = recipeListAdapter.getRecipe(position);
-            db.recipeDao().delete(recipe);
-            recipeListAdapter.notifyDataSetChanged();
-        }
-    };
-
 }

@@ -88,9 +88,11 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         Intent intent = getIntent();
 
         if (intent.getStringExtra("namaMasak") != null){
+            // set detail resep dari lokal / room database
             namaMasak = intent.getStringExtra("namaMasak");
             setMakanan(namaMasak);
         }else {
+            // set detail resep dari API
             String mealName = intent.getStringExtra(EXTRA_DETAIL);
             DetailPresenter presenter = new DetailPresenter((DetailView) this);
             presenter.getMealById(mealName);

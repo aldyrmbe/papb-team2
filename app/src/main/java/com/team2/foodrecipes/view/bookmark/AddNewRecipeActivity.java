@@ -77,7 +77,7 @@ public class AddNewRecipeActivity extends AppCompatActivity {
             manager.createNotificationChannel(channel);
         }
 
-        //tap action buat notif
+        //tap action buat notifikasi
         Intent intent = new Intent(this, BookmarkActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
@@ -108,7 +108,7 @@ public class AddNewRecipeActivity extends AppCompatActivity {
             }
         });
 
-        //not functioning (progress) buat save gambar ke directory
+        //not functioning (progress) button buat pilih gambar dari gallery
         addImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,6 +121,7 @@ public class AddNewRecipeActivity extends AppCompatActivity {
     private void saveNewRecipe (String recipeName, String detail, String kategori, String negara, String bahan) {
         AppDatabase db = AppDatabase.getDbInstance(this.getApplicationContext());
 
+        // fungsi simpan gambar input (not working right now)
         //saveGmbr();
 
         Recipe recipe = new Recipe();
@@ -135,7 +136,7 @@ public class AddNewRecipeActivity extends AppCompatActivity {
         finish();
     }
 
-    //not functioning (progress)
+    //not functioning (progress) fungsi untuk save gambar ke folder dan ambil path urinya
     /*
     private void saveGmbr() {
         String randomKey = UUID.randomUUID().toString();
@@ -171,6 +172,7 @@ public class AddNewRecipeActivity extends AppCompatActivity {
     }
     */
 
+    //fungsi pilih gambar di gallery
     private void choosePicture(){
         Intent intent = new Intent();
         intent.setType("image/*");

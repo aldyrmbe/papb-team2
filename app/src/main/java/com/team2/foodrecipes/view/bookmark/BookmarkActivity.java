@@ -40,6 +40,7 @@ public class BookmarkActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bookmark);
 
+        // tombol untuk input resep
         Button addNewRecipeButton = findViewById(R.id.addNewRecipeButton);
         addNewRecipeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,10 +51,13 @@ public class BookmarkActivity extends AppCompatActivity {
             }
         });
 
+        // inisialiasasi recyclerview
         initRecyclerView();
 
+        // muat resep dari database ke recyclerview
         loadRecipeList();
 
+        // masuk ke detail resep
         recipeListAdapter.setOnItemClickListener((view, position) -> {
             TextView mealName = view.findViewById(R.id.mealName);
             String namaMasak = mealName.getText().toString();
@@ -72,6 +76,8 @@ public class BookmarkActivity extends AppCompatActivity {
         recyclerView.addItemDecoration(dividerItemDecoration);
         recipeListAdapter = new RecipeListAdapter(this);
 
+        // inisialisasi fungsi swipe untuk delete resep
+        // swipe ke kanan atau kiri sepenuhnya untuk menghapus resep dari database
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT|ItemTouchHelper.LEFT) {
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {

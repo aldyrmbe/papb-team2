@@ -127,14 +127,14 @@ public class DetailActivity extends AppCompatActivity implements DetailView {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_detail, menu);
-        MenuItem favoriteItem = menu.findItem(R.id.favorite);
-        Drawable favoriteItemColor = favoriteItem.getIcon();
-        setupColorActionBarIcon(favoriteItemColor);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu_detail, menu);
+//        MenuItem favoriteItem = menu.findItem(R.id.favorite);
+//        Drawable favoriteItemColor = favoriteItem.getIcon();
+//        setupColorActionBarIcon(favoriteItemColor);
+//        return true;
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
